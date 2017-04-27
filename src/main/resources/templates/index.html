@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>EasyDeploy</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/materialize/0.97.0/css/materialize.min.css">
+<link th:href="@{/css/icon.css}" rel="stylesheet">
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/materialize/0.97.0/js/materialize.min.js"></script>
+<script th:src="@{/js/index.js}"></script>
+</head>
+<body style="font-family: 'Roboto', 'Droid Sans Fallback', '微软雅黑'; min-height: 100vh;display: flex;flex-direction: column;">
+
+	<nav>
+		<div class="nav-wrapper green">
+			<a th:href="@{/}" class="brand-logo center">EasyDeploy —— Auto Deploy Platform</a>
+		</div>
+	</nav>
+
+	<div class="container" style="padding-top: 20px; width: 90%;flex: 1 0 auto;">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#java-web-deploy" class="green-text">Web项目部署 for Java</a></li>
+				</ul>
+			</div>
+		</div>
+			<div id="java-web-deploy" class="row">
+				<div class="row">
+					<div class="input-field col s12 m6 offset-m2">
+						<nav>
+							<div class="nav-wrapper">
+									<div class="input-field white" style="height: 100%">
+										<input id="java-web-deploy-search" type="search">
+									</div>
+							</div>
+						</nav>
+					</div>
+					<div class="input-field col s12 m4">
+						<a class="waves-effect waves-light btn blue lighten-2" th:href="@{/webdeploy/new}" style="line-height: 64px; height: 64px;">创建</a>
+					</div>
+				</div>
+				<table class="hoverable">
+					<thead>
+					<tr>
+						<td>项目名称</td>
+						<td>UUID</td>
+						<td>ContextPath</td>
+						<td>端口号</td>
+						<td>详情</td>
+					</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item:${items}">
+							<td th:text="${item.name}"></td>
+							<td th:text="${item.uuid}"></td>
+							<td th:text="${item.contextPath}"></td>
+							<td th:text="${item.port}"></td>
+							<td><a th:href="@{'/webdeploy/detail/' + ${item.uuid} }" class="btn waves-effect waves-light green lighten-2">详情</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+	
+	<footer class="page-footer green" style="padding-top: 0; margin-top: 40px;">
+      <div class="footer-copyright">
+        <div class="container">
+        Copyright © 2017 <a class="grey-text text-lighten-4" href="http://blog.csdn.net/jeffleo" target="_blank">http://blog.csdn.net/jeffleo</a>. All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/jeff-leo" target="_blank">My Github</a>
+        </div>
+      </div>
+    </footer>
+	
+</body>
+</html>
