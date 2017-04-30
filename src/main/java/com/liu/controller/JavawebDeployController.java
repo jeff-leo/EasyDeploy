@@ -27,7 +27,7 @@ public class JavawebDeployController {
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String index(){
-        return "new";
+        return "web/new";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -51,7 +51,7 @@ public class JavawebDeployController {
             e.printStackTrace();
         }
         System.out.println("项目路径" + item.getContextPath());
-        ModelAndView model = new ModelAndView("detail");
+        ModelAndView model = new ModelAndView("web/detail");
         model.addObject("item", item);
         return model;
     }

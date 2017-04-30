@@ -20,9 +20,43 @@
 		<div class="row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s6"><a href="#java-web-deploy" class="green-text">Web项目部署 for Java</a></li>
+					<!-- 应该动态获取，thymeleaf如何搞？-->
+					<li class="tab col s6"><a href="#java-deploy" class="green-text">Jar项目部署</a></li>
+					<li class="tab col s6"><a href="#java-web-deploy" class="green-text">War项目部署</a></li>
 				</ul>
 			</div>
+		</div>
+		<div id="java-deploy">
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m2">
+					<nav>
+						<div class="nav-wrapper">
+							<div class="input-field white" style="height: 100%">
+								<input id="java-web-deploy-search" type="search">
+							</div>
+						</div>
+					</nav>
+				</div>
+				<div class="input-field col s12 m4">
+					<a class="waves-effect waves-light btn blue lighten-2" th:href="@{/javadeploy/new}" style="line-height: 64px; height: 64px;">创建</a>
+				</div>
+			</div>
+			<table class="hoverable">
+				<thead>
+				<tr>
+					<td>项目名称</td>
+					<td>UUID</td>
+					<td>详情</td>
+				</tr>
+				</thead>
+				<tbody>
+					<tr th:each="item:${JavaList}">
+						<td th:text="${item.name}"></td>
+						<td th:text="${item.uuid}"></td>
+						<td><a th:href="@{'/javadeploy/detail/' + ${item.uuid} }" class="btn waves-effect waves-light green lighten-2">详情</a></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 			<div id="java-web-deploy" class="row">
 				<div class="row">
@@ -50,7 +84,7 @@
 					</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item:${items}">
+						<tr th:each="item:${JavawebList}">
 							<td th:text="${item.name}"></td>
 							<td th:text="${item.uuid}"></td>
 							<td th:text="${item.contextPath}"></td>

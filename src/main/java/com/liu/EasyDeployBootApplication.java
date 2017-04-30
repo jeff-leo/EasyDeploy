@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class EasyDeployBootApplication {
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(EasyDeployBootApplication.class, args);
-    }*/
+    }
 }
