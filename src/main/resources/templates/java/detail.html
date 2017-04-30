@@ -100,8 +100,6 @@
 						<p th:text="名称 + ' : ' + ${item.name}"></p>
 						<p>UUID：<span id="text-uuid" th:text="${item.uuid}"></span></p>
 						<p th:text="Maven-profile + ' : ' + ${item.profile}"></p>
-						<p th:text="ContextPath + ' : ' + ${item.contextPath}"></p>
-						<p th:text="端口号 + ' : ' + ${item.port}"></p>
 						<div th:if="${item.type} == 1">
 							<p th:text="SVN地址 + ' : ' + ${item.url}"></p>
 						</div>
@@ -120,7 +118,6 @@
 				</div>
 			</div>
 		</div>
-
 
 	</div>
 

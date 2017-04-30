@@ -28,12 +28,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 			<!-- boot测试时注释-->
-			<exclusions>
+			<!--<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions>-->
 		</dependency>
 		<!-- boot测试时注释-->
 		<!--<dependency>
@@ -74,13 +74,13 @@
 	<build>
 		<plugins>
 			<!-- war部署使用-->
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<warName>easydeploy</warName>
 				</configuration>
-			</plugin>
+			</plugin>-->
 			<!-- boot测试使用-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
